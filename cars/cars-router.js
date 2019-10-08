@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
       .where({ id })
       .first()
       .then(car => {
-        res.json(fruit);
+        res.json(car);
       })
       .catch(err => {
         res.status(500).json({ message: 'Failed to retrieve cars' });
@@ -31,9 +31,9 @@ router.get('/', (req, res) => {
   });
   
   router.post('/', (req, res) => {
-    const fruitData = req.body;
+    const carsData = req.body;
     db('cars')
-      .insert(fruitData)
+      .insert(carsData)
       .then(ids => {
         db('cars')
           .where({ id: ids[0] })
@@ -46,6 +46,6 @@ router.get('/', (req, res) => {
         res.status(500).json({ message: 'Failed to store data' });
       });
   });
-  
+   
   module.exports = router;
   
