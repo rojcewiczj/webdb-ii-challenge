@@ -4,12 +4,12 @@ exports.up = function(knex) {
         // a Primary Key, named 'id' that is and integer and
         // auto-increments
         tbl.increments();
-        tbl.integer('VIN', 25).notNullable();
+        tbl.integer('vin', 25).notNullable();
         tbl.string('make', 128).notNullable();
         tbl.string('model', 25).notNullable();
         tbl.integer('mileage', 25 ).notNullable();
         tbl.string('type', 20);
-        tbl.string('salvage');
+        tbl.string('status');
 
       });
 };

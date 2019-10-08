@@ -5,9 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('cars').insert([
-        { vin: 12, make: 'Ford', model: 'Mustang', mileage:},
-        { colName: 'rowValue2'},
-        { colName: 'rowValue3'}
+        { vin: 12, make: 'Ford', model: 'Mustang', mileage: 20000, type: 'automatic', status: 'salvaged' },
       ]);
     });
 };
